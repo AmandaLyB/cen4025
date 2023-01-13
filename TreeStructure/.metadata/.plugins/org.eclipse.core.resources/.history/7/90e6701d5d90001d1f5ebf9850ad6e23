@@ -1,0 +1,39 @@
+package cen4025;
+
+public class Main {
+
+//	public static void readStructure()  {
+//		// read structure of folders and files
+//	}
+//	
+//	public static void writePDF() {
+//		// write PDF file
+//	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class Node {
+	
+	int key;
+	String name;
+	
+	Node leftChild;
+	Node rightChild;
+	
+	Node(int key, String name) {
+		this.key = key;
+		this.name = name;
+	}
+	
+	public String toString() {
+		return name + " has a key " + key;
+	}
+}
