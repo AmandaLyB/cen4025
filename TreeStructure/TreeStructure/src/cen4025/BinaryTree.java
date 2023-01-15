@@ -77,12 +77,7 @@ public class BinaryTree {
 	}
 	
 	public static void main(String[] args) throws Exception {
-				
-		
-		
 		BinaryTree tree = new BinaryTree();	
-		
-		
 		tree.inOrderTraverseTree(tree.root);
 	}
 
