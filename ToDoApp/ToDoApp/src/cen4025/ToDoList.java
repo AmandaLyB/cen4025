@@ -16,15 +16,31 @@ public class ToDoList {
 	}
 
 	// delete an item from the to-do list
-	public void deleteItem() {
-		
+	public void deleteItem(String item) {
+		int count = 0;
+		for(int i = 0; i < this.toDoList.size(); ++i) {
+			if(item.contentEquals(this.toDoList.get(i))) {
+				this.toDoList.remove(item);
+				count ++;
+			} 
+		}
+		if (count > 0) {
+			System.out.println("Deleted \"" + item + "\" from list");
+			count = 0;
+		} else {
+			System.out.println("Could not locate \"" + item + "\" in list");
+			count = 0;
+		}
+		System.out.println("-------------------");
 	}
 	
 	// print the to-do list to console
 	public void viewList() {
+		System.out.println("To Do List: ");
 		for(int i = 0; i < this.toDoList.size(); ++i) {
-			System.out.println("" + toDoList.get(i));
-		}		
+			System.out.println("\t" + toDoList.get(i));
+		}	
+		System.out.println("-------------------");
 	}
 }
 

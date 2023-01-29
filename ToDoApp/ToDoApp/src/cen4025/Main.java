@@ -10,8 +10,10 @@ public class Main {
 		list.addItem("Give Mike an A");
 		list.addItem("Make a mobile game");
 		list.viewList();
-
+		list.deleteItem("a");
+		list.viewList();
+		list.deleteItem("Make a mobile game");
+		list.viewList();
 	}
-
 }
 
