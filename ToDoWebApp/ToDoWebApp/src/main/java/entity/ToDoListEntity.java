@@ -1,9 +1,12 @@
 package entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnDefault;
 
 @Entity
-@Table(name = "to_do_list", schema = "todowebapp", catalog = "")
+@NamedQuery(name="printItemQuery", query="SELECT i FROM ToDoListEntity i")
+@NamedQuery(name="deleteItemQuery", query="DELETE FROM ToDoListEntity WHERE id = ?1")
+@Table(name = "to_do_list", schema = "todowebapp")
 public class ToDoListEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -12,6 +15,8 @@ public class ToDoListEntity {
     @Basic
     @Column(name = "item")
     private String item;
+
+    //@ColumnDefault("'(curdate())'")
     @Basic
     @Column(name = "date_added")
     private String dateAdded;
@@ -88,4 +93,31 @@ public class ToDoListEntity {
         result = 31 * result + (status != null ? status.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "id=" + id +
+                ", item='" + item + '\'' +
+                ", date_added='" + dateAdded + '\'' +
+                ", date_completed='" + dateCompleted + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
+    public String idToString() {
+        return "" + id;
+    }
+    public String itemToString() {
+        return item;
+    }
+    public String dateAddedToString() {
+        return dateAdded;
+    }
+    public String dateCompletedToString() {
+        return dateCompleted;
+    }
+    public String statusToString() {
+        return status;
+    }
+
 }

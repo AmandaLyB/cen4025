@@ -28,15 +28,23 @@ button:hover {
     border: none;
     color: white;
 }
-
+tr:nth-child(odd) {background-color: #101010;}
 table {
+
     color: #8e7cc3;
+    text-align: left;
     margin-left: 20px;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
-td, tr {
+
+td, th, tr {
+    padding: 10px;
+    height: 30px;
     color: #8e7cc3;
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 20px;
+    border: 2px solid #674ea7;
 }
 
 .submit {
@@ -82,7 +90,7 @@ td, tr {
     margin-bottom: 0px;
     background-color: #8e7cc3;
     color: #ffffff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
 }
 .menu li:hover {
     background-color: #674ea7;
